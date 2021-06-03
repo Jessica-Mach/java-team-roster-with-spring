@@ -1,10 +1,12 @@
 package com.launchacademy.teamrosterwithspring.controllers;
 
 import com.launchacademy.teamrosterwithspring.models.League;
+import com.launchacademy.teamrosterwithspring.models.Player;
 import com.launchacademy.teamrosterwithspring.models.Team;
 import com.launchacademy.teamrosterwithspring.services.NewTeamService;
 import com.launchacademy.teamrosterwithspring.services.TeamsService;
 import java.util.List;
+import javax.servlet.http.HttpServlet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -76,6 +78,19 @@ public class TeamsController {
   public String getPositionsList(Model model){
     model.addAttribute("positions", League.getLeague().getPositions());
     return "/positions/index";
+  }
+
+  @GetMapping("/positions/{position}")
+  public String getListOfPlayersByPosition(@PathVariable String position, Model model) {
+    List<Player> playersByPosition = League.getLeague().getPlayersByPosition(position);
+    if(position != null && playersByPosition != null) {
+      model.addAttribute("players", playersByPosition);
+    } else {
+      throw new ResponseStatusException(
+          HttpStatus.NOT_FOUND
+      );
+    }
+    return "positions/show";
   }
 
   @PostMapping("/fantasy/teams")

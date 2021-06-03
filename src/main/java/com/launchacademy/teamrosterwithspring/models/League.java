@@ -184,5 +184,21 @@ public class League {
   public void setPositions(List<String> positions) {
     this.positions = positions;
   }
+
+  public List<Player> getPlayersByPosition(String position) {
+    if(!this.positions.contains(position)){
+      return null;
+    }
+    List<Player> playersByPosition = new ArrayList<>();
+    for(Team team : this.teams) {
+      for(Player player : team.getPlayers()){
+        if(player.getPosition().equalsIgnoreCase(position)) {
+          player.setTeamName(team.getTeamName());
+          playersByPosition.add(player);
+        }
+      }
+    }
+    return playersByPosition;
+  }
 }
 

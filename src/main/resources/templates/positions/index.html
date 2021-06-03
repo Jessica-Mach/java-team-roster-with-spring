@@ -4,7 +4,7 @@
 <h3>Current Positions</h3>
 <ul th:each="position : ${positions}" >
   <li >
-    <a th:href="@{'/fantasy/teams/' + ${position}}" th:text="${position}"></a>
+    <a th:href="@{'/positions/' + ${position}}" th:text="${position}"></a>
   </li>
 </ul>
 </body>
