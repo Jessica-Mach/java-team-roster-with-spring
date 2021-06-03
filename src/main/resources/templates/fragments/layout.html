@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html th:fragment="layout (template)">
+<head>
+  <meta charset="UTF-8">
+  <title>Curling Teams</title>
+</head>
+<body>
+  <header>
+    <h1>Curling Association</h1>
+  </header>
+  <th:block th:include="${template}"/>
+</body>
+</html>

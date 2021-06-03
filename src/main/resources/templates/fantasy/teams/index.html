@@ -1,0 +1,11 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+<body>
+<h3>Current Teams</h3>
+<ul th:each="team, iter : ${teams}" >
+  <li >
+    <a th:href="@{'/fantasy/teams/' + ${iter.index}}" th:text="${team.teamName}"></a>
+  </li>
+</ul>
+</body>
+</html>

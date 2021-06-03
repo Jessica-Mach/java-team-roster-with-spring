@@ -1,0 +1,16 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+<body>
+  <main>
+    <h3 th:text="${team.teamName}"></h3>
+    <div th:each="player : ${team.players}">
+      <ul th:object="${player}">
+        <li>
+            <p th:text="*{name} + ', ' + *{position}"></p>
+        </li>
+      </ul>
+    </div>
+
+  </main>
+</body>
+</html>

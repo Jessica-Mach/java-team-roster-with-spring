@@ -1,0 +1,35 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+<body>
+  <h3>Add a new Fantasy Curling Team</h3>
+  <form action="#" th:action="@{/fantasy/teams}" th:object="${newTeamService}" method="POST">
+    <div >
+      <label th:for="teamName">Team Name</label>
+      <input type="text" th:field="*{teamName}" />
+    </div>
+    <div>
+      <label th:for="skip">Name of Skip: </label>
+      <input type="text" th:field="*{skip}"/>
+    </div>
+    <div>
+      <label th:for="lead">Name of Lead: </label>
+      <input type="text" th:field="*{lead}"/>
+    </div>
+    <div>
+      <label th:for="second">Name of Second: </label>
+      <input type="text" th:field="*{second}"/>
+    </div>
+    <div>
+      <label th:for="third">Name of Third: </label>
+      <input type="text" th:field="*{third}" />
+    </div>
+    <div>
+      <label th:for="alternate">Name of Alternate: </label>
+      <input type="text" th:field="*{alternate}" />
+    </div>
+   <div>
+     <input type="submit" value="Add Team" />
+   </div>
+  </form>
+</body>
+</html>
