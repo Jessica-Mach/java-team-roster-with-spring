@@ -193,7 +193,7 @@ public class League {
     for(Team team : this.teams) {
       for(Player player : team.getPlayers()){
         if(player.getPosition().equalsIgnoreCase(position)) {
-          player.setTeamName(team.getTeamName());
+//          player.setTeamName(team.getTeamName());
           playersByPosition.add(player);
         }
       }

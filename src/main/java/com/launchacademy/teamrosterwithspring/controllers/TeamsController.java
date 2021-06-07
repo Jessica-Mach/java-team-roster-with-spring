@@ -6,7 +6,6 @@ import com.launchacademy.teamrosterwithspring.models.Team;
 import com.launchacademy.teamrosterwithspring.services.NewTeamService;
 import com.launchacademy.teamrosterwithspring.services.TeamsService;
 import java.util.List;
-import javax.servlet.http.HttpServlet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
