@@ -30,8 +30,9 @@ public class Player {
   @Column(name="name")
   private String name;
 
-  @Column(name="position")
-  private String position;
+  @ManyToOne
+  @JoinColumn(name="position_id", nullable = false)
+  private Position position;
 
   @ManyToOne
   @JoinColumn(name="team_id", nullable = false)

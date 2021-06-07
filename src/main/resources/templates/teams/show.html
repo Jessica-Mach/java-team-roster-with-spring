@@ -6,7 +6,7 @@
     <div th:each="player : ${team.players}">
       <ul th:object="${player}">
         <li>
-            <p th:text="*{name} + ', ' + *{position}"></p>
+            <p th:text="*{name} + ', ' + *{position.name}"></p>
         </li>
       </ul>
     </div>

@@ -1,11 +1,11 @@
 package com.launchacademy.teamrosterwithspring.repositories;
 
-import com.launchacademy.teamrosterwithspring.models.Player;
+import com.launchacademy.teamrosterwithspring.models.Position;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PlayerRepository extends CrudRepository<Player, Long> {
+public interface PositionRepository extends CrudRepository<Position, Long> {
 
-  Player findByPositionId(Integer positionId);
+  Position findByName(String name);
 }

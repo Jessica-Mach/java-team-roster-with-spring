@@ -2,11 +2,11 @@
       th:replace="~{fragments/layout :: layout (~{::body})}">
 <body>
 <main>
-  <h3 th:text="'Position: ' + ${players.get(0).position}"></h3>
+  <h3 th:text="'Position: ' + ${position}"></h3>
   <div th:each="player : ${players}">
     <ul th:object="${player}">
       <li>
-        <p th:text="*{name} + ', ' + *{teamName}"></p>
+        <p th:text="*{name} + ', ' + *{team.teamName}"></p>
       </li>
     </ul>
   </div>
