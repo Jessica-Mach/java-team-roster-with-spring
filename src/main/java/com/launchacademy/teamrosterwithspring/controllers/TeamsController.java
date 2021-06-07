@@ -3,7 +3,7 @@ package com.launchacademy.teamrosterwithspring.controllers;
 import com.launchacademy.teamrosterwithspring.models.League;
 import com.launchacademy.teamrosterwithspring.models.Player;
 import com.launchacademy.teamrosterwithspring.models.Team;
-import com.launchacademy.teamrosterwithspring.services.NewTeamService;
+//import com.launchacademy.teamrosterwithspring.services.NewTeamService;
 import com.launchacademy.teamrosterwithspring.services.TeamsService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,11 +53,11 @@ public class TeamsController {
     model.addAttribute("teams", teamsService.findAll());
     return "fantasy/teams/index";
   }
-
-  @GetMapping("/fantasy/teams/new")
-  public String getFantasyTeamForm(@ModelAttribute NewTeamService newTeamService) {
-    return "fantasy/teams/new";
-  }
+//
+//  @GetMapping("/fantasy/teams/new")
+//  public String getFantasyTeamForm(@ModelAttribute NewTeamService newTeamService) {
+//    return "fantasy/teams/new";
+//  }
 
   @GetMapping("/fantasy/teams/{index}")
   public String showFantasyTeam(@PathVariable Integer index, Model model) {
@@ -92,10 +92,10 @@ public class TeamsController {
     return "positions/show";
   }
 
-  @PostMapping("/fantasy/teams")
-  public String createFantasyTeam(@ModelAttribute NewTeamService newTeamService) {
-    Team newTeam = newTeamService.instantiateTeam();
-    teamsService.save(newTeam);
-    return "redirect:/fantasy/teams";
-  }
+//  @PostMapping("/fantasy/teams")
+//  public String createFantasyTeam(@ModelAttribute NewTeamService newTeamService) {
+//    Team newTeam = newTeamService.instantiateTeam();
+//    teamsService.save(newTeam);
+//    return "redirect:/fantasy/teams";
+//  }
 }
