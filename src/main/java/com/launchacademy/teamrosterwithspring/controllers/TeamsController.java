@@ -50,7 +50,7 @@ public class TeamsController {
 
   @GetMapping("/fantasy/teams")
   public String getFantasyTeams(Model model) {
-    model.addAttribute("teams", teamsService.getTeams());
+    model.addAttribute("teams", teamsService.findAll());
     return "fantasy/teams/index";
   }
 
@@ -63,7 +63,7 @@ public class TeamsController {
   public String showFantasyTeam(@PathVariable Integer index, Model model) {
     try{
       if(index != null) {
-        model.addAttribute("team", teamsService.getTeams().get(index));
+        model.addAttribute("team", teamsService.findAll().get(index));
       }
     }catch (IndexOutOfBoundsException exception) {
       throw new ResponseStatusException(
@@ -95,7 +95,7 @@ public class TeamsController {
   @PostMapping("/fantasy/teams")
   public String createFantasyTeam(@ModelAttribute NewTeamService newTeamService) {
     Team newTeam = newTeamService.instantiateTeam();
-    teamsService.addToList(newTeam);
+    teamsService.save(newTeam);
     return "redirect:/fantasy/teams";
   }
 }
